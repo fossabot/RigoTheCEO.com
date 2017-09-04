@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render('shared/metatags') %>
+    <%= render('shared/favicons') %>
+
+    <%= yield :head %>
+
+    <%= content_for?(:default_stylesheets) ? yield(:default_stylesheets) : render('shared/default_stylesheets') %>
+    <%= yield :stylesheets %>
+
+    <%= render('shared/google_analytics') %>
+  </head>
+  <body>
+    <%= content_for?(:navbar) ? yield(:navbar) : render('shared/navbar') %>
+    <%= content_for?(:flash) ? yield(:flash) : render('shared/flash') %>
+    <%= yield :content %>
+    <%= content_for?(:footer) ? yield(:footer) : render('shared/footer') %>
+
+     <%= content_for?(:default_scripts) ? yield(:default_scripts) : render('shared/default_scripts') %>
+     <%= yield :scripts %>
+  </body>
+</html>

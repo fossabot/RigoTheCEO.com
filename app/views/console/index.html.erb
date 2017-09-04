@@ -1,0 +1,7 @@
+<% content_for(:console_active) do %>active<% end %>
+
+<% content_for(:stylesheets) do %>
+    <%= stylesheet_link_tag params[:controller] %>
+<% end %>
+
+<%= console %>

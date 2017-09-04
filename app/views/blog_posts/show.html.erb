@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <%= render('shared/metatags') %>
+      <%= render('shared/favicons') %>
+
+      <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+      <!-- Custom styles for this template -->
+      <%= stylesheet_link_tag 'blog/clean-blog' %>
+    </head>
+    <body>
+        <%= render('blog_posts/shared/navbar') %>
+
+        <!-- Page Header -->
+        <!-- Set your background image for this header on the line below. -->
+        <header class="intro-header" id="intro-header-post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1><%= @blog_post.title %></h1>
+                            <h2 class="subheading"><%= @blog_post.subtitle %></h2>
+                            <%# Stamp just represents the format, not the actual date. #%>
+                            <span class="meta">Posted by <%= @blog_post.user.screen_name %> on <%= @blog_post.created_at.stamp 'September 24, 2014' %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <%= @blog_post.body %>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <hr>
+
+        <%= render('blog_posts/shared/footer') %>
+
+        <!-- Bootstrap core JavaScript -->
+        <%= javascript_include_tag 'jquery' %>
+        <%= javascript_include_tag 'jquery_ujs' %>
+        <%#
+          bootstrap-sprockets and bootstrap should not both be included in application.js.
+          bootstrap-sprockets provides individual Bootstrap Javascript files (alert.js or dropdown.js, for example),
+          while bootstrap provides a concatenated file containing all Bootstrap Javascripts.
+        #%>
+        <%= javascript_include_tag 'bootstrap' %>
+
+        <!-- Custom scripts for this template -->
+        <%= javascript_include_tag 'blog/clean-blog' %>
+    </body>
+</html>

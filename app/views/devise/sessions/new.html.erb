@@ -1,0 +1,67 @@
+<% content_for :default_stylesheets do %>
+  <%= stylesheet_link_tag 'application-notheme' %>
+<% end %>
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'auth/login' %>
+<% end %>
+
+<%= content_for :login_active, 'active' %>
+
+<% content_for :content do %>
+  <div class="container">
+    <% if !resource.errors.empty? %>
+      <div class="alert alert-flash alert-danger fade in alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h4>
+          <%= t("devise.errors.messages.not_saved",
+                count: resource.errors.count,
+                resource: resource.class.model_name.human.downcase) %>
+        </h4>
+        <ul>
+          <% resource.errors.full_messages.each do |message| %>
+            <li><%= message.html_safe %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <div class="container">
+    <div class="col-md-offset-4 col-md-4">
+      <% if !resource.errors.empty? %>
+        <div class="alert alert-flash alert-danger fade in alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h4>Couldn't login in</h4>
+          <ul>
+            <% resource.errors.full_messages.each do |message| %>
+              <li><%= message.html_safe %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <img src="<%= image_path('RFINALSQUARE.png') %>" alt="My logo" class="img-responsive center-block logo">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-form', role: 'form' }) do |f| %>
+        <div class="form-group-lg">
+          <%= f.text_field :username, autofocus: true, required: true, class: 'form-control', placeholder: 'Username' %>
+        </div>
+        <div class="form-group-lg last">
+          <%= f.password_field :password, class: 'form-control', required: true, placeholder: 'Password' %>
+        </div>
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+        <button class="btn btn-default btn-block fancy-button hvr-fade" type="submit">
+          Login
+        </button>
+      <% end %>
+      <%# render "devise/shared/links" #%>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :footer do %>
+  <div></div>
+<% end %>

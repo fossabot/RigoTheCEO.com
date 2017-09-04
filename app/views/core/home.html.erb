@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%= render('shared/metatags') %>
+    <%= stylesheet_link_tag 'application-notheme' %>
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <!-- Theme CSS -->
+    <%= stylesheet_link_tag 'home' %>
+
+    <%= render('shared/favicons') %>
+    <%= render('shared/google_analytics') %>
+  </head>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation -->
+    <nav role="navigation" class="navbar navbar-custom navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target=".navbar-main-collapse" class="navbar-toggle">
+            Menu <i class="fa fa-bars"></i>
+          </button>
+          <a href="#page-top" class="navbar-brand page-scroll">
+            <i class="fa fa-black-tie"></i>
+            <span class="light">RigoTheCEO</span>
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section-->
+            <li class="hidden"><a href="#page-top"></a></li>
+            <li><a href="#about" class="page-scroll">About</a></li>
+            <li><a href="#goals" class="page-scroll">Goals</a></li>
+            <li><a href="#contact" class="page-scroll">Contact</a></li>
+            <li>
+              <%= link_to 'Blog', blog_posts_path %>
+            </li>
+            <% unless user_signed_in? %>
+              <li>
+                <%= link_to 'Login', new_user_session_path %>
+              </li>
+              <li>
+                <%= link_to 'Sign up', new_user_registration_path %>
+              </li>
+            <% else %>
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                  <span><%= current_user.screen_name %></span>
+                  <i class="caret"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <%= link_to 'My account', edit_user_registration_path %>
+                  </li>
+                  <% if current_user.admin? %>
+                    <li>
+                      <a href="/admin">Admin</a>
+                    </li>
+                  <% end %>
+                  <% if Rails.env.development? %>
+                    <li>
+                      <%= link_to t('Console (DEV)'), console_path %>
+                    </li>
+                  <% end %>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+                  </li>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Intro Header-->
+    <!--
+      <header class="intro">
+        <div class="intro-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <h1 class="brand-heading">Rigoberto Molina</h1>
+                <p class="intro-text">I love playing possum.</p><a href="#about" class="btn btn-circle page-scroll"><i class="fa fa-angle-double-down animated"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    -->
+    <div class="homepage-hero-module">
+      <div class="video-container">
+        <div class="title-container">
+          <div class="headline">
+            <h1>Rigoberto Molina</h1>
+          </div>
+          <div class="description">
+            <div class="inner">Initiation.</div>
+          </div>
+          <br/>
+          <a href="#about" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-down animated"></i>
+          </a>
+          <%= render('shared/flash') %>
+        </div>
+        <div class="filter"></div>
+        <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" class="fillWidth">
+          <source src="https://s3.amazonaws.com/rigotheceo-heroku/videos/RigoTrimmed-NoAudio.mp4" type="video/mp4">
+          Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <div class="poster hidden">
+          <%= image_tag 'me-smoke-purple' %>
+          </div>
+      </div>
+    </div>
+    <section id="about" class="container-fluid content-section text-center">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h2>About Me</h2>
+          <p>
+            I'm everything from a software developer to a photographer, video editor, &amp; the like.
+            I spend most of my time on a MacBook, learning, studying, working. I can build an entire software platform
+            from nothing but little bits &amp; some planning.
+          </p><br/>
+          <p>
+            I spent the first half of my life on the east coast, in New York &amp; later Maryland.
+            After that I moved to Los Angeles, California. I spent a couple of years there &amp; later moved
+            to this town nobody has ever even heard of. Well, life got boring &amp; I knew I wasn't going to spend my adolescence
+            in that shitty town. So I made an app, made a deal with a record label through one of my ex's connections.
+            So I made a couple of bucks off of that &amp; now I'm currently working on 2 more projects with some of my amigos in Brentwood, Los Angeles, CA.
+          </p><br/>
+          <p><i>Note: I'll come back to update this &amp; give it more detail after.</i></p>
+        </div>
+      </div>
+    </section>
+    <section id="goals" class="content-section text-center">
+      <div class="download-section">
+        <div class="container">
+          <div class="col-lg-8 col-lg-offset-2">
+            <h2>What are my goals?</h2>
+            <p>
+              For now I'm just trying to get my work out there &amp; get my companies rolling.
+              A couple more million bucks would be nice too.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="container-fluid content-section text-center">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <h2>Contact Me</h2>
+          <p>Releasing some cool stuff soon, make sure to keep in touch.</p>
+          <p><a href="mailto:rigotheceo@gmail.com">RigoTheCEO@gmail.com</a></p>
+          <ul class="list-inline banner-social-buttons">
+            <li><a href="https://twitter.com/RigoTheCEO" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i><span class="network-name">&nbsp;Twitter</span></a></li>
+            <li><a href="https://snapchat.com/add/RigoTheCEO" class="btn btn-default btn-lg"><i class="fa fa-snapchat fa-fw"></i><span class="network-name">&nbsp;Snapchat</span></a></li>
+            <li><a href="https://instagram.com/RigoTheCEO/" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i><span class="network-name">&nbsp;Instagram</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div id="map"></div>
+    <footer>
+      <div class="container text-center">
+        <p>Copyright © Rigoberto Molina 2015-2017. All rights reserved.</p>
+        <p>v1.1.0</p><small>I know this site sucks but it's version 1 so I'll fix it soon.</small>
+      </div>
+    </footer>
+    <%= javascript_include_tag 'jquery' %>
+    <%= javascript_include_tag 'jquery_ujs' %>
+    <%= javascript_include_tag 'bootstrap' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Always insert Raven after libraries but before main code.-->
+    <script src="https://cdn.ravenjs.com/3.17.0/raven.min.js" crossorigin="anonymous"></script>
+    <script>Raven.config('https://68d0afd82bb44004a88249ce6a4ae862@sentry.io/206765').install()</script>
+    <%= javascript_include_tag 'application' %>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsG0aLf5BPJGY28aCbOFtwkchd8EJXPeI"></script>
+    <%= javascript_include_tag 'home' %>
+  </body>
+</html>

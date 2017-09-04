@@ -1,0 +1,55 @@
+<% if flash[:error] %>
+  <div class="container alert-container">
+    <div class="alert alert-danger fade in alert-flash">
+      <button class="close" type="button" data-dismiss="alert">
+        <i class="fa fa-times-circle-o"></i>
+      </button>
+      <p><%= flash[:error] %></p>
+    </div>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="container alert-container">
+    <div class="alert alert-danger fade in alert-flash">
+      <button class="close" type="button" data-dismiss="alert">
+        <i class="fa fa-times-circle-o"></i>
+      </button>
+      <p><%= flash[:alert] %></p>
+    </div>
+  </div>
+<% end %>
+
+<% if flash[:info] %>
+  <div class="container alert-container">
+    <div class="alert alert-info fade in alert-flash">
+      <button class="close" type="button" data-dismiss="alert">
+        <i class="fa fa-times-circle-o"></i>
+      </button>
+      <p><%= flash[:info] %></p>
+    </div>
+  </div>
+<% end %>
+
+<%# Notice means success #%>
+<% if flash[:notice] %>
+  <div class="container alert-container">
+    <div class="alert alert-success fade in alert-flash">
+      <button class="close" type="button" data-dismiss="alert">
+        <i class="fa fa-times-circle-o"></i>
+      </button>
+      <p><%= flash[:notice] %></p>
+    </div>
+  </div>
+<% end %>
+
+<% if flash[:success] %>
+  <div class="container alert-container">
+    <div class="alert alert-success fade in alert-flash">
+      <button class="close" type="button" data-dismiss="alert">
+        <i class="fa fa-times-circle-o"></i>
+      </button>
+      <p><%= flash[:success] %></p>
+    </div>
+  </div>
+<% end %>
