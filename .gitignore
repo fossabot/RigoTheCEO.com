@@ -24,3 +24,7 @@
 /.env.production
 /.vscode
 /node_modules
+
+/vendor/assets/bower_components
+*.bowerrc
+bower.json
