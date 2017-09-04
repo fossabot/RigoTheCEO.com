@@ -28,3 +28,10 @@
 /vendor/assets/bower_components
 *.bowerrc
 bower.json
+
+# Currently unnecessary theme files
+/app/assets/stylesheets/themes/cyborg
+/app/assets/stylesheets/themes/darkly
+/app/assets/stylesheets/themes/flatly
+/app/assets/stylesheets/themes/gsdk
+/app/assets/stylesheets/themes/modern
