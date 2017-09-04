@@ -3,3 +3,6 @@
 
 asset 'hover'
 asset 'jqBootstrapValidation'
+asset 'bootstrap-daterangepicker'
+asset 'moment'
+asset 'jvectormap'
