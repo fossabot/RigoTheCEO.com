@@ -1,28 +1,42 @@
-# README
+# RigoTheCEO.com
 
 [![Build Status](https://travis-ci.org/RigoTheCEO/RigoTheCEO.com.svg?branch=master)](https://travis-ci.org/RigoTheCEO/RigoTheCEO.com)
 
-### This project is in development & has major security flaws so I don't suggest you run this in production just yet.
+This is the official repository for my site's source code. Learn from it to make yourself your own cool site.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Ruby version
 
-Things you may want to cover:
+This repository should work with any Ruby version but personally I'm running it on `Ruby 2.4.1`.
 
-* Ruby version
+### System dependencies
 
-* System dependencies
+* You should have the latest version of `Postgres` installed on your system.
 
-* Configuration
+### Environment variables
 
-* Database creation
+There are 4 `.env.example` files. Create 4 more files with the same file names without the `.example` extension.
 
-* Database initialization
+* `.env` are global environment variables that go into any Application environment.
+* `.env.dev`, `.env.test`, & `.env.production` are for environment variables that go only into the Application environments `development`, `test`, & `production` respectively.
 
-* How to run the test suite
+### Database initialization
 
-* Services (job queues, cache servers, search engines, etc.)
+To initiate your databases, run: `rails db:setup`. Then `rails db:migrate` if necessary.
 
-* Deployment instructions
+### How to run the test suite
 
-* ...
+Just run `rails test`.
+
+### Services (job queues, cache servers, search engines, etc.)
+
+There are no current job queue, cache servers, or search engines installed.
+
+### Deployment instructions
+
+#### Heroku
+
+* TODO: Heroku instructions right here
+
+#### AWS
+
+* TODO: AWS instructions right here.
