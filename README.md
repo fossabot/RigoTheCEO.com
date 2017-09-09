@@ -1,5 +1,7 @@
 # README
 
+[![Build Status](https://travis-ci.org/RigoTheCEO/RigoTheCEO.com.svg?branch=master)](https://travis-ci.org/RigoTheCEO/RigoTheCEO.com)
+
 ### This project is in development & has major security flaws so I don't suggest you run this in production just yet.
 
 This README would normally document whatever steps are necessary to get the
