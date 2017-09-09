@@ -4,7 +4,7 @@ rvm:
 env:
   - DB=postgres
 before_script:
-  - psql -c 'create database rigotheceo_test;'
+  - psql -c 'create database travis;'
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
