@@ -1,6 +1,7 @@
 # RigoTheCEO.com
 
 [![Build Status](https://travis-ci.org/RigoTheCEO/RigoTheCEO.com.svg?branch=master)](https://travis-ci.org/RigoTheCEO/RigoTheCEO.com)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRigoTheCEO%2FRigoTheCEO.com.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRigoTheCEO%2FRigoTheCEO.com?ref=badge_shield)
 
 This is the official repository for my site's source code. Learn from it to make yourself your own cool site.
 
@@ -40,3 +41,7 @@ There are no current job queue, cache servers, or search engines installed.
 ### AWS
 
 * TODO: AWS instructions right here.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRigoTheCEO%2FRigoTheCEO.com.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRigoTheCEO%2FRigoTheCEO.com?ref=badge_large)
